@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.1.29",
+    "lastTouchedAt": "2026-01-30T13:34:28.374Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-01-30T13:18:26.218Z",
+    "lastRunVersion": "2026.1.29",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "gemini/gemini-2.5-flash"
+      },
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "gemini": {
+        "baseUrl": "你的api中转站地址/v1",
+        "apiKey": "密钥",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "gemini-2.5-flash",
+            "name": "gemini-2.5-flash"
+          }
+        ]
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto"
+  },
+  "channels": {
+    "feishu": {
+      "appId": "自行填充",
+      "appSecret": "自行填充",
+      "verificationToken": "自行填充",
+      "enabled": true
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "lan",
+    "auth": {
+      "mode": "token",
+      "token": "646515876fa29983811af73dd271629153a707b36df1ffaf"
+    },
+    "remote": {
+      "token": "646515876fa29983811af73dd271629153a707b36df1ffaf"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "feishu": {
+        "enabled": true
+      }
+    },
+    "installs": {
+      "feishu": {
+        "source": "npm",
+        "spec": "@m1heng-clawd/feishu",
+        "installPath": "/root/.openclaw/extensions/feishu",
+        "version": "0.1.3",
+        "installedAt": "2026-01-30T12:47:39.683Z"
+      }
+    }
+  }
+}
