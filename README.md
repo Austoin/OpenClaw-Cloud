@@ -161,3 +161,7 @@ openclaw gateway restart
 ![image](./img/1.png)
 
 > 添加了 api 后记得重启服务 ：openclaw gateway restart
+
+**然后就可以了**
+
+![image](./img/2.png)
