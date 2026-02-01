@@ -79,7 +79,6 @@ netsh interface portproxy add v4tov4 listenport=18792 listenaddress=127.0.0.1 co
 | 指令 | 功能 |
 |-----|------|
 | `/restart` | 重启机器人进程（需配置中开启 `commands.restart=true`） |
-| `/reboot` | 强制重置当前会话，刷新浏览器工具访问权限 |
 | `截图/读取页面` | 自然语言命令，如"读取当前网页标题" |
 
 ---
@@ -90,7 +89,7 @@ netsh interface portproxy add v4tov4 listenport=18792 listenaddress=127.0.0.1 co
 |-----|------|---------|
 | TG 无回应（进程在线） | 网络无法连接 Telegram | 在启动脚本中添加 `export https_proxy` |
 | 日志显示 Token 错误 | 网关开启了身份验证 | 修改 `openclaw.json` 将 `auth.mode` 设为 `none` |
-| 插件显示已连接但机器人说"看不见" | 会话未刷新 | 发送 `/reboot` 重置会话 |
+| 插件显示已连接但机器人说"看不见" | 会话未刷新 | 重启服务 `systemctl --user restart openclaw-gateway` |
 | doctor 报错 | `gateway.bind` 配置错误 | 设为 `"loopback"` |
 
 ---
